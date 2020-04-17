@@ -1,0 +1,18 @@
+parámetros: buildConfiguration: 'Release'
+
+steps:
+- task: DotNetCoreCLI@2
+displayName: 'Build the project - $á parameters.buildConfiguration '
+  inputs:
+    command: 'build'
+argumentos: '--no-restore --configuration $? . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    projects: '**/*.csproj'
+
+- task: DotNetCoreCLI@2
+displayName: 'Publicar el proyecto - $ . .. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+  inputs:
+    command: 'publish'
+    projects: '**/*.csproj'
+    publishWebProjects: false
+argumentos: '--no-build --configuration $á parameters.buildConfiguration ?--output $(Build.ArtifactStagingDirectory)/$ ?. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    zipAfterPublish: true
